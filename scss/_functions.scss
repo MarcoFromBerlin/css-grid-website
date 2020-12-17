@@ -1,0 +1,18 @@
+@mixin media($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    grid-column: span $i;
+
+    padding: 20px 15px;
+    color: white;
+    background-color: red;
+  }
+  .col-#{$i}::after {
+    content: "Desktop use: .col-#{$i}";
+  }
+}
